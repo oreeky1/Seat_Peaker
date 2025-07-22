@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seat Selection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Select Your Seats</h1>
+  <button id="viewMapBtn">🗺️ View Seat Map</button>
+  <div class="grid-view" id="seatGrid"></div>
+  <button id="confirmBtn">Confirm Selection</button>
+
+  <div id="mapModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="mapImage" src="seatmap.jpg" alt="Seat Map" />
+  </div>
+
+  <script src="seats-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
