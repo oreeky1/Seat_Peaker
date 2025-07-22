@@ -5,7 +5,9 @@ async function fetchBookedSeats() {
   const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSH7LtxlSMcaQ3weyKvCYlqjIXrXFIUMh_6QpWnB4iuBKr2B36xSb9q_I6rh9QJoBqJTfIy1n_JnH1G/pub?gid=365081060&single=true&output=csv";
   try {
     const res = await fetch(url);
+    console.log("Fetched res:", res);
     const text = await res.text();
+    console.log("Fetched CSV:", text);
     const rows = text.split("\n").slice(1);
     rows.forEach(row => {
       const cols = row.split(",");
