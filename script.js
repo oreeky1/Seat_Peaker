@@ -11,8 +11,8 @@ async function fetchBookedSeats() {
     const rows = text.split("\n").slice(1);
     rows.forEach(row => {
       const cols = row.split(",");
-      if (cols[4]) {
-        cols[4].split(";").forEach(seat => bookedSeats.add(seat.trim()));
+      if (cols[3]) {
+        cols[3].split(";").forEach(seat => bookedSeats.add(seat.trim()));
       }
     });
   } catch {
