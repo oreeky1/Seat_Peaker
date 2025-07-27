@@ -28,7 +28,7 @@ body {
   color: red;
   font-weight: bold;
   text-align: center;
-  line-height: 35px;
+  line-height: 4px;
   position: relative;
 }
 .seat.blank {
@@ -107,40 +107,27 @@ button {
   border-radius: 10px;
 }
 
-/* Responsive layout for mobile */
+/* Updated Responsive layout for mobile */
 @media (max-width: 600px) {
-  .grid-view {
-    overflow-x: auto;
-    padding-inline: 10px;
-  }
-
-  .seat-row {
-    gap: 3px;
-  }
-
   .seat, .seat.blank {
-    width: 24px;
-    height: 24px;
-    font-size: 10px;
-    line-height: 24px;
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+    line-height: 32px;
   }
-
-  .row-label {
-    font-size: 10px;
-    width: 40px;
-  }
-
   .seat.accessible::after {
-    font-size: 9px;
-    bottom: -10px;
+    font-size: 10px;
+    bottom: -6px;
   }
-
+  .row-label {
+    font-size: 12px;
+    width: 50px;
+  }
+  h1 {
+    font-size: 18px;
+  }
   button {
     font-size: 14px;
     padding: 8px 12px;
-  }
-
-  h1 {
-    font-size: 18px;
   }
 }
