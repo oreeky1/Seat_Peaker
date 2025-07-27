@@ -1,20 +1,42 @@
-
 body {
   font-family: sans-serif;
-  padding: 20px;
+  padding: 1px;
+  text-align: center;
 }
 .grid-view {
-  display: grid;
-  grid-template-columns: repeat(20, 30px);
-  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
   margin-top: 20px;
+  align-items: center;
+  width: 100%;
+}
+.seat-row {
+  display: flex;
+  gap: 1px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .seat {
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: 35px;
   background: url('seat-icon.png') no-repeat center center;
   background-size: contain;
   cursor: pointer;
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  line-height: 4px;
+  position: relative;
+}
+.seat.blank {
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  pointer-events: none;
+  opacity: 0;
 }
 .seat.selected {
   outline: 3px solid limegreen;
@@ -23,14 +45,33 @@ body {
   opacity: 0.3;
   pointer-events: none;
 }
+.seat.accessible {
+  border: 2px dashed #1976d2;
+  background-color: rgba(25, 118, 210, 0.1);
+}
+.seat.accessible::after {
+  content: "♿";
+  position: absolute;
+  font-size: 10px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #1976d2;
+}
+.row-label {
+  width: 80px;
+  font-size: 12px;
+  line-height: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #444;
+}
 button {
-  margin: 10px 0;
+  margin: 10px 6px;
   padding: 10px 16px;
   font-size: 16px;
   cursor: pointer;
 }
-
-/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -54,4 +95,39 @@ button {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+}
+.stage {
+  width: 80%;
+  height: 20px;
+  margin: 0 auto 20px;
+  background: linear-gradient(to bottom, #444, #222);
+  color: white;
+  font-weight: bold;
+  line-height: 20px;
+  border-radius: 10px;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 600px) {
+  .seat, .seat.blank {
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+    line-height: 20px;
+  }
+  .row-label {
+    font-size: 10px;
+    width: 40px;
+  }
+  .seat.accessible::after {
+    font-size: 8px;
+    bottom: -8px;
+  }
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  h1 {
+    font-size: 18px;
+  }
 }
