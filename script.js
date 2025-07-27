@@ -14,6 +14,7 @@ async function fetchBookedSeats() {
       if (cols[3]) {
         cols[3].split(";").forEach(seat => bookedSeats.add(seat.trim()));
       }
+      console.log("bookedSeats:", bookedSeats);
     });
   } catch {
     console.warn("Using fallback layout");
