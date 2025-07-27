@@ -28,7 +28,7 @@ body {
   color: red;
   font-weight: bold;
   text-align: center;
-  line-height: 4px;
+  line-height: 35px;
   position: relative;
 }
 .seat.blank {
@@ -109,24 +109,37 @@ button {
 
 /* Responsive layout for mobile */
 @media (max-width: 600px) {
-  .seat, .seat.blank {
-    width: 20px;
-    height: 20px;
-    font-size: 8px;
-    line-height: 20px;
+  .grid-view {
+    overflow-x: auto;
+    padding-inline: 10px;
   }
+
+  .seat-row {
+    gap: 3px;
+  }
+
+  .seat, .seat.blank {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    line-height: 24px;
+  }
+
   .row-label {
     font-size: 10px;
     width: 40px;
   }
+
   .seat.accessible::after {
-    font-size: 8px;
-    bottom: -8px;
+    font-size: 9px;
+    bottom: -10px;
   }
+
   button {
     font-size: 14px;
     padding: 8px 12px;
   }
+
   h1 {
     font-size: 18px;
   }
