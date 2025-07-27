@@ -112,22 +112,39 @@ button {
   .seat, .seat.blank {
     width: 32px;
     height: 32px;
-    font-size: 11px;
+    font-size: 10px;
+    line-height: 30px;
+  }
+
+  .seat-row {
+    gap: 2px;
+  }
+
+  .row-label {
+    font-size: 10px;
+    width: 36px;
     line-height: 32px;
   }
+
   .seat.accessible::after {
     font-size: 10px;
     bottom: -6px;
   }
-  .row-label {
-    font-size: 12px;
-    width: 50px;
-  }
-  h1 {
-    font-size: 18px;
-  }
+
   button {
     font-size: 14px;
-    padding: 8px 12px;
+    padding: 10px 16px;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .stage {
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin: 15px auto 10px;
   }
 }
