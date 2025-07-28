@@ -97,7 +97,7 @@ document.getElementById("confirmBtn").onclick = () => {
   const selected = [...document.querySelectorAll(".seat.selected")]
     .map(s => s.dataset.label)
     .join("; ");
-  const total = selected.split(", ").length * 150;
+  const total = selected.split("; ").length * 150;
   const url = `https://docs.google.com/forms/d/e/1FAIpQLSfmgtxu82OF0ch0C-0tHOF2x8DzSDb3YmwIKbI_Ah_phVh-kQ/viewform?entry.1356305436=${encodeURIComponent(selected)}&entry.621348383=${total}`;
   window.open(url, "_blank");
 };
