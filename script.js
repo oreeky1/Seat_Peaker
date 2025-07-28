@@ -28,7 +28,16 @@ function createSeat(label) {
   el.dataset.label = label;
   if (bookedSeats.has(label)) el.classList.add("booked");
   el.onclick = () => {
-    el.classList.toggle("selected");
+    if (el.classList.contains("selected")) {
+      el.classList.remove("selected");
+    } else {
+      const selectedSeats = document.querySelectorAll(".seat.selected");
+      if (selectedSeats.length >= 2) {
+        alert("ניתן לבחור עד שני מושבים בלבד.");
+        return;
+      }
+      el.classList.add("selected");
+    }
   };
   return el;
 }
@@ -87,7 +96,7 @@ async function init() {
 document.getElementById("confirmBtn").onclick = () => {
   const selected = [...document.querySelectorAll(".seat.selected")]
     .map(s => s.dataset.label)
-    .join(", ");
+    .join("; ");
   const total = selected.split(", ").length * 150;
   const url = `https://docs.google.com/forms/d/e/1FAIpQLSfmgtxu82OF0ch0C-0tHOF2x8DzSDb3YmwIKbI_Ah_phVh-kQ/viewform?entry.1356305436=${encodeURIComponent(selected)}&entry.621348383=${total}`;
   window.open(url, "_blank");
